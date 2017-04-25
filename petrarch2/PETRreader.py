@@ -492,7 +492,7 @@ def read_discard_list(discard_path):
 
     """
 
-    logger = logging.getLogger('petr_log')
+    logger = logging.getLogger(__name__)
     logger.info("Reading " + PETRglobals.DiscardFileName)
     open_FIN(discard_path, "discard")
 
