@@ -195,7 +195,10 @@ def do_coding(event_dict):
     NDiscardSent = 0
     NDiscardStory = 0
 
-    logger = logging.getLogger('petr_log')
+    if out_file:
+        file = open_tex(out_file)
+
+    logger = logging.getLogger(__name__)
     times = 0
     sents = 0
     for key, val in sorted(event_dict.items()):
@@ -401,7 +404,7 @@ PETRARCH2
 def main():
     cli_args = parse_cli_args()
     utilities.init_logger('PETRARCH.log')
-    logger = logging.getLogger('petr_log')
+    logger = logging.getLogger(__name__)
 
     PETRglobals.RunTimeString = time.asctime()
 
